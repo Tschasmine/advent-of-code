@@ -18,6 +18,12 @@ class Day1 {
 
         return NumberSets(pairs.map { it.first }.sorted(), pairs.map { it.second }.sorted())
     }
+
+    fun calculateSimilarity(input: String): Int {
+        val numberSets = parseInput(input)
+        val occurrences = numberSets.secondNumberSet.groupingBy { it }.eachCount()
+        return numberSets.firstNumberSet.sumOf { it * (occurrences[it] ?: 0) }
+    }
 }
 
 data class NumberSets(val firstNumberSet: List<Int>, val secondNumberSet: List<Int>) {
