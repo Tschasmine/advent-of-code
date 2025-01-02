@@ -19,4 +19,10 @@ class Day1Test {
 
         assertThat(Day1().calculateTotalDistance(input), `is`(11))
     }
+
+    @Test
+    fun `can calculate the actual input`() {
+        val input = Day1Test::class.java.getResource("/day1/input.txt")!!.readText()
+        assertThat(Day1().calculateTotalDistance(input), `is`(1879048))
+    }
 }

@@ -10,9 +10,9 @@ class Day1 {
     }
 
     private fun parseInput(input: String): NumberSets {
-        val pairs = input.lines().map { line ->
+        val pairs = input.trim().lines().map { line ->
             val (firstNo, _, secondNo) = Regex("(\\d+)(\\s+)(\\d+)").find(line.trim())?.destructured
-                ?: throw IllegalArgumentException("Invalid input")
+                ?: throw IllegalArgumentException("Invalid input: $line")
             firstNo.toInt() to secondNo.toInt()
         }
 
