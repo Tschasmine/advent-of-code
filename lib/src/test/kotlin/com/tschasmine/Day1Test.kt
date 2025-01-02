@@ -21,8 +21,22 @@ class Day1Test {
     }
 
     @Test
-    fun `can calculate the actual input`() {
+    fun `can calculate total distance of the actual input`() {
         val input = Day1Test::class.java.getResource("/day1/input.txt")!!.readText()
         assertThat(Day1().calculateTotalDistance(input), `is`(1879048))
+    }
+
+    @Test
+    fun `can calculate the similarity of given example`() {
+        val input = """
+            3   4
+            4   3
+            2   5
+            1   3
+            3   9
+            3   3
+        """.trimIndent()
+
+        assertThat(Day1().calculateSimilarity(input), `is`(31))
     }
 }
