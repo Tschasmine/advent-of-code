@@ -39,4 +39,10 @@ class Day1Test {
 
         assertThat(Day1().calculateSimilarity(input), `is`(31))
     }
+
+    @Test
+    fun `can calculate similarity of the actual input`() {
+        val input = Day1Test::class.java.getResource("/day1/input.txt")!!.readText()
+        assertThat(Day1().calculateSimilarity(input), `is`(21024792))
+    }
 }
